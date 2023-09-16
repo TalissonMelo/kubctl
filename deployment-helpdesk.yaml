@@ -1,9 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-helpdesk
+  name: helpdesk
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: helpdesk
