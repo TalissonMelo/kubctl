@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anime-deployment
+spec:
+  selector:
+    matchLabels:
+      app: anime
+  template:
+    metadata:
+      labels:
+        app: anime
+    spec:
+      containers:
+      - name: anime
+        image: talissonmelo/anime:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        env:
+        - name: DB_HOST
+          value: "svc-mysql"
+        - name: DB_USERNAME
+          value: "root"
+        - name: DB_PASSWORD
+          value: "123456"
