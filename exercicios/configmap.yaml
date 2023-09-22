@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: conf-anime
-data:
-  DB_HOST: "svc-mysql"
-  DB_USERNAME: "root"
-  DB_PASSWORD: "123456"

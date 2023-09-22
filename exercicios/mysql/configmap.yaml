@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: conf-mysql
-data:
-  MYSQL_ROOT_PASSWORD: "123456"

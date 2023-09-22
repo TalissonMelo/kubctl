@@ -17,6 +17,27 @@ spec:
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /escolas/nomes?nome=Pro
+            port: 8080
+            scheme: HTTP
+          successThreshold: 5  
+          initialDelaySeconds: 60
+        startupProbe:
+          httpGet:
+            path: /escolas
+            port: 8080
+            scheme: HTTP
+          failureThreshold: 30
+          periodSeconds: 10
+          initialDelaySeconds: 60
+        livenessProbe:
+          httpGet:
+            path: /escolas
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
         envFrom:
           - secretRef:
               name: secret-anime
