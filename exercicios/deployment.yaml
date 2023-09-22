@@ -18,5 +18,5 @@ spec:
         - containerPort: 8080
         imagePullPolicy: Always
         envFrom:
-          - configMapRef:
-              name: conf-anime
+          - secretRef:
+              name: secret-anime

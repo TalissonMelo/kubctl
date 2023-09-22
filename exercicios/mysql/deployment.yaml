@@ -17,5 +17,5 @@ spec:
         ports:
           - containerPort: 3306
         envFrom:
-          - configMapRef:
-              name: conf-mysql
+          - secretRef:
+              name: secret-mysql
